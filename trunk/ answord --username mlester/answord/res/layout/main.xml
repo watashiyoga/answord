@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+ <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+    <LinearLayout
+    	android:orientation="horizontal"
+    	android:layout_width="fill_parent"
+    	android:layout_height="wrap_content">
+    <Spinner android:id="@+id/books" 
+	    	android:layout_width="200px"
+	    	android:layout_height="fill_parent"
+	    	/>
+	<Spinner android:id="@+id/chapters" 
+	    	android:layout_width="100px"
+	    	android:layout_height="fill_parent"
+	    	/>
+	</LinearLayout>
+	<ScrollView
+		android="#FFFFFF"
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent"
+	>
+    <TextView android:id="@+id/currentview" 
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="fill_parent"
+	    	android:minLines="30"
+	    	android:background="#ffffffff"
+	    	android:textColor="#ff000000"
+	    	android:width="320px"/>
+	</ScrollView>
+</LinearLayout>
