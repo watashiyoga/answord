@@ -1,15 +1,6 @@
-#project goals
-
 = Project Goals =
 
-# Speed Up Load Time
-# Multiple Bible Support
-# OSIS to SQLLite Converter
-# Searching
-
-= Details =
-
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+ # Speed Up Load Time
+ # Multiple Bible Support
+ # OSIS to SQLLite Converter
+ # Searching
