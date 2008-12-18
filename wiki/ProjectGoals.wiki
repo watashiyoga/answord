@@ -4,3 +4,4 @@
  # Multiple Bible Support
  # OSIS to SQLLite Converter
  # Searching
+ # Better Aesthetics(fonts, cleaner book selection,etc)
