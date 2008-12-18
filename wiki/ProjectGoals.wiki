@@ -5,3 +5,5 @@
  # OSIS to SQLLite Converter
  # Searching
  # Better Aesthetics(fonts, cleaner book selection,etc)
+
+Once these goals have been met, I will accept Answord as being in version 1 and I will put it up in the android market.
