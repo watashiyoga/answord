@@ -7,17 +7,17 @@ Bibles that are used with answord are nothing more than a sqlite database. I did
 
 In order for a bible to work with Answord its schema should be setup as the following
 Answord Sqlite Bible Schema:
-TABLE bible
+{{{TABLE bible
 id INTEGER PRIMARY KEY
 book VARCHAR(50)
 chapter INTEGER
 verse INTEGER
-scripture VARCHAR(500)
+scripture VARCHAR(500)}}}
 
 *There should be a record in the table that defines the name of the bible*
 *There should be a record in the table that defines a note for the bible*
 
-= Bible Format Plans =
+== Bible Format Plans ==
 
 The format at the moment is very spartan. It is just intend to get the basic of viewing a bible down but once the bible application is in better shape I plan on possibly changing the schema to allow for more elaborate features. Some features are
   * Titles
