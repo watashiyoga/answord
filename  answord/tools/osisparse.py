@@ -1,6 +1,6 @@
 from xml.dom import pulldom
 from pysqlite2 import dbapi2 as sqlite
-
+#used to convert sword bible osis  for osis files that use the <verse> </verse> convention
 filename = raw_input('Enter the file to be converted(xxx.osis)')
 dbname = filename.split(".")[0]+".db"
 connection = sqlite.connect(dbname)
