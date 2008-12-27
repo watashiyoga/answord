@@ -3,7 +3,6 @@ from pysqlite2 import dbapi2 as sqlite
 
 filename = raw_input('Enter the file to be converted(xxx.osis)')
 dbname = filename.split(".")[0]+".db"
-print dbname
 connection = sqlite.connect(dbname)
 cursor = connection.cursor()
 bf = open(filename)
@@ -13,17 +12,30 @@ count = 0
 for (event, node) in events:
     if count >=0:
         if event == pulldom.START_ELEMENT:
-            if node.tagName == "osisText":
-                tablename = node.getAttribute("osisIDWork")
-                query = "CREATE TABLE " + tablename
+            #create table
+            if node.tagName == "work" and node.getAttribute("osisWork"):
+                bibleversion = ""
+                events.expandNode(node)
+                for cnode in node.childNodes:
+                    if hasattr(cnode,"tagName"):
+                        if cnode.tagName =="title":
+                            bibleversion = cnode.childNodes[0].nodeValue
+                            break 
+                query = "CREATE TABLE bible" 
                 query += " (id INTEGER PRIMARY KEY,book VARCHAR(50),"
                 query += "chapter INTEGER,verse INTEGER,"
-                query += "scripture VARCHAR(500),tags VARCHAR(100))"
+                query += "scripture VARCHAR(500))"
                 try:
                     cursor.execute(query)
                 except:
-                    cursor.execute("DROP TABLE "+tablename)
+                    cursor.execute("DROP TABLE bible")
                     cursor.execute(query)
+                #define what bible version
+                query = "INSERT INTO bible VALUES(null,?,'','',?)"
+                print bibleversion
+                cursor.execute(query,("version",bibleversion))
+                cursor.execute(query,("note","SQlite bible made from a Sword Bible Module, may contain errors"))
+            
             if node.tagName == "verse":
                 count+=1
                 events.expandNode(node)
@@ -44,7 +56,7 @@ for (event, node) in events:
                                 elif gcnode.tagName =="q":
                                     passage.append("\"")
                             passage.append("\"")#finish the quote
-                query = "INSERT INTO "+tablename + " VALUES (null,?,?,?,?,null)"
+                query = "INSERT INTO bible VALUES (null,?,?,?,?)"
                 cursor.execute(query,(book,chapter,verse," ".join(passage)))
                 if count%1000 ==0:
                     print count
