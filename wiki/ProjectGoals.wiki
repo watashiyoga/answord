@@ -7,3 +7,6 @@
  # Better Aesthetics(fonts, cleaner book selection,etc)
 
 Once these goals have been met, I will accept Answord as being in version 1 and I will put it up in the android market.
+== Some other ideas for Answord ==
+ # Reminder Utilty for those who want to set up a bible reading plan
+ # bookmarking/tagging utilty to help remember part of the bible you want to check out again
